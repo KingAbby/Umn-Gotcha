@@ -1,0 +1,169 @@
+body {
+    font-family: arial;
+    font-size: 14px;
+}
+
+#logo {
+    font-family: "Comic Sans MS";
+    color: aqua;
+    text-shadow: 2px 2px 2px #000;
+}
+
+#logo1 {
+    color: aqua;
+    background-color: indigo;
+    background-image: linear-gradient(to left, rgb(127, 176, 255), indigo);
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+ul#nav {
+    margin: -8px;
+    padding: 10px;
+    background-color: aquamarine;
+    background-image: linear-gradient(to left, aqua, indigo);
+}
+
+ul#nav li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+ul#nav li a {
+    text-decoration: none;
+    padding: 10px 0;
+    color: rgb(128, 208, 210);
+    font-weight: bold;
+}
+
+ul#nav li a:hover {
+    color: aqua;
+    border-bottom: 3px solid aqua;
+}
+/* Input Nama */
+
+input {
+    color: aqua;
+    background-color: indigo;
+    font-weight: bold;
+    border-radius: 10px;
+    border-color: #000;
+    padding: 3px;
+}
+
+input:hover {
+    color: aqua;
+    background-color: blueviolet;
+    border-radius: 10px;
+    padding: 3px;
+}
+/* Submit Button */
+
+button {
+    color: aqua;
+    background-color: indigo;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+button:hover {
+    color: blueviolet;
+    background-color: aqua;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+/*Portfolio MukaLego */
+
+ul#portfolio {
+    text-align: center;
+}
+
+ul#portfolio li {
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
+}
+
+ul#portfolio li img {
+    float: left;
+    margin: 5px 5px;
+    padding: 20px 20px;
+    background-color: blueviolet;
+}
+
+ul#portfolio li img:hover {
+    background-color: aqua;
+}
+
+/* Table Servis */
+
+/* Table 1 */
+.Table1 {
+    border: 1px solid #d6dde6;
+    border-collapse: collapse;
+    margin-bottom: 2em;
+    width: 50%;
+}
+
+.Table1 td{
+    padding: 0.5em;
+}
+
+.Table1 th{
+    color: aqua;
+    background-color: rgb(114, 28, 195);
+    font-weight: bold;
+    padding-left: 0.3em;
+}
+
+.Table1 .header{
+    background-color: rgb(114, 28, 195);
+    padding: 0.3em;
+}
+.Table1 .header2{
+    background-color: rgb(128, 92, 205);
+    padding: 0.3em;
+}
+
+/* End of Table 1 */
+
+tr:nth-child(even) {
+    background-color: rgb(159, 124, 192);
+  }
+
+  /* Table 2 */
+
+.Table2 {
+    border: 1px solid #d6dde6;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.Table2 .header{
+    background-color: rgb(114, 28, 195);
+    padding: 0.3em;
+}
+.Table2 .header2{
+    background-color: rgb(128, 92, 205);
+    padding: 0.3em;
+}
+
+.Table2 td {
+    padding: 0.5em;
+}
+
+.Table2 th {
+    color: aqua;
+    background-color: rgb(114, 28, 195);
+    font-weight: bold;
+    padding-left: 0.3em;
+
+}
+
+/* End of Table 2 */
