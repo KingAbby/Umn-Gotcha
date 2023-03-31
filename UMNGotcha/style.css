@@ -38,7 +38,7 @@
   
   /* Hide the images by default */
   .mySlides {
-    display: flex;
+    display: none;
     justify-content: center;
   }
   

@@ -226,7 +226,12 @@ function cekKesehatan() {
     const waktu = setInterval(() => {
     updateWaktu();
     }, 1000);
-    
-    
-    
-    
+
+    const activity_button = document.querySelector(".activity_button");
+
+    function myFunction (){
+        document.getElementById("main").innerHTML = barMain;
+        document.getElementById("makan").innerHTML = barMakan;
+        document.getElementById("tidur").innerHTML = barTidur;
+        document.getElementById("kesehatan").innerHTML = barKesehatan;
+    }
