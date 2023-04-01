@@ -32,7 +32,7 @@
         <button onclick="makan()" class="activity-button" id="makan">Makan</button>
         <button onclick="tidur()" class="activity-button" id="tidur">Tidur</button>
         <button onclick="kesehatan()" class="activity-button" id="kesehatan">Obat</button>
-        
+
 
             <script>
             //progress makan
@@ -70,6 +70,7 @@
             let progress2 = 10
             let interval2 = setInterval(main, 10000) // 10000 Milisekon
             function main(){
+                window.location.href = "play-game.html"
                 // Progress = 90 + 25 = 115 > 100, Set var progress = 100 agar tidak lebih dari 100
                 if (progress2 > 100){ // Gak ngelebihin seratus
                     progress2 = 100; // set progress
