@@ -163,7 +163,122 @@ function cekKesehatan() {
     cekKondisiLevel();
     cekKesehatan();
     }
+    //Level 1
+    var barMakanIntv = setInterval(penguranganBarMakan, 700);
+    function penguranganBarMakan() {
+      barMakan = barMakan - 1;
+      $("#statMakan").attr("style", "width: " + barMakan + "%");
+      if (barMakan === 0) {
+          clearInterval(barMakanIntv);
+      }
+    }
+
+    var barTidurIntv = setInterval(penguranganBarTidur, 1000);
+    function penguranganBarTidur() {
+      barTidur = barTidur - 1;
+      $("statMakan").attr("style", "width: " + barTidur + "%");
+      if (barTidur === 0) {
+          clearInterval(barTidurIntv);
+      }
+    }
+
+    var barMainIntv = setInterval(penguranganBarMain, 1500);
+    function penguranganBarMain() {
+      barMain = barMain - 1;
+      $("statMakan").attr("style", "width: " + barMain + "%");
+      if (barMain === 0) {
+          clearInterval(barMainIntv);
+      }
+    }
+
+    var barKesehatanIntv = setInterval(penguranganBarKesehatan, 1000);
+    function penguranganBarKesehatan() {
+      barKesehatan = barKesehatan - 1;
+      $("statKesehatan").attr("style", "width: " + barKesehatan + "%");
+      if (barKesehatan === 0) {
+          clearInterval(barKesehatanIntv);
+      }
+    }
+    //Akhir Level 1
+
+
+    //Level 2
+    var barMakanIntv = setInterval(penguranganBarMakan, 700);
+    function penguranganBarMakan() {
+      barMakan = barMakan - 1;
+      $("#statMakan").attr("style", "width: " + barMakan + "%");
+      if (barMakan === 0) {
+          clearInterval(barMakanIntv);
+      }
+    }
+
+    var barTidurIntv = setInterval(penguranganBarTidur, 1000);
+    function penguranganBarTidur() {
+      barTidur = barTidur - 1;
+      $("statMakan").attr("style", "width: " + barTidur + "%");
+      if (barTidur === 0) {
+          clearInterval(barTidurIntv);
+      }
+    }
+
+    var barMainIntv = setInterval(penguranganBarMain, 1500);
+    function penguranganBarMain() {
+      barMain = barMain - 1;
+      $("statMakan").attr("style", "width: " + barMain + "%");
+      if (barMain === 0) {
+          clearInterval(barMainIntv);
+      }
+    }
+
+    var barKesehatanIntv = setInterval(penguranganBarKesehatan, 1000);
+    function penguranganBarKesehatan() {
+      barKesehatan = barKesehatan - 1;
+      $("statKesehatan").attr("style", "width: " + barKesehatan + "%");
+      if (barKesehatan === 0) {
+          clearInterval(barKesehatanIntv);
+      }
+    }
+    //Akhir Level 2
+
     
+    //Level 3
+    var barMakanIntv = setInterval(penguranganBarMakan, 700);
+    function penguranganBarMakan() {
+      barMakan = barMakan - 1;
+      $("#statMakan").attr("style", "width: " + barMakan + "%");
+      if (barMakan === 0) {
+          clearInterval(barMakanIntv);
+      }
+    }
+
+    var barTidurIntv = setInterval(penguranganBarTidur, 1000);
+    function penguranganBarTidur() {
+      barTidur = barTidur - 1;
+      $("statMakan").attr("style", "width: " + barTidur + "%");
+      if (barTidur === 0) {
+          clearInterval(barTidurIntv);
+      }
+    }
+
+    var barMainIntv = setInterval(penguranganBarMain, 1500);
+    function penguranganBarMain() {
+      barMain = barMain - 1;
+      $("statMakan").attr("style", "width: " + barMain + "%");
+      if (barMain === 0) {
+          clearInterval(barMainIntv);
+      }
+    }
+
+    var barKesehatanIntv = setInterval(penguranganBarKesehatan, 1000);
+    function penguranganBarKesehatan() {
+      barKesehatan = barKesehatan - 1;
+      $("statKesehatan").attr("style", "width: " + barKesehatan + "%");
+      if (barKesehatan === 0) {
+          clearInterval(barKesehatanIntv);
+      }
+    }
+    //Akhir Level 3
+
     /* mengurangi kondisi pemain secara berkala */
     function kurangKondisi() {
     makanan -= 5;
@@ -226,12 +341,4 @@ function cekKesehatan() {
     const waktu = setInterval(() => {
     updateWaktu();
     }, 1000);
-
-    const activity_button = document.querySelector(".activity_button");
-
-    function myFunction (){
-        document.getElementById("main").innerHTML = barMain;
-        document.getElementById("makan").innerHTML = barMakan;
-        document.getElementById("tidur").innerHTML = barTidur;
-        document.getElementById("kesehatan").innerHTML = barKesehatan;
-    }
+    

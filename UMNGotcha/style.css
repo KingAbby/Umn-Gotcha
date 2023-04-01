@@ -38,7 +38,7 @@
   
   /* Hide the images by default */
   .mySlides {
-    display: none;
+    display: flex;
     justify-content: center;
   }
   
@@ -108,7 +108,7 @@
     padding-right: 15px;
     padding-left: 15px;
     font-weight: bold;
-    background-color: darkturquoise;
+    background-color: aquamarine;
     border-radius: 5px;
   }
   .tombol button:hover{
@@ -132,9 +132,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #F0F0F0;
-    border-bottom: 1px solid #CCCCCC;
+    padding: 10em;
+    background-color: #b4adad;
+    border-bottom: 1px solid #5f4848;
 }
 
 .status-label {
@@ -144,7 +144,7 @@ body {
 .status-meter {
     width: 100px;
     height: 10px;
-    background-color: #CCCCCC;
+    background-color: #b4adad;
     border-radius: 5px;
     margin: 0 10px;
     position: relative;
@@ -153,7 +153,7 @@ body {
 .status-fill {
     width: 0%;
     height: 100%;
-    background-color: #00CC00;
+    background-color: greenyellow;
     border-radius: 5px;
     position: absolute;
     top: 0;
@@ -163,6 +163,28 @@ body {
 
 .level-label {
     font-size: 14px;
+}
+
+.level-meter {
+    width: 100px;
+    height: 10px;
+    background-color: #b4adad;
+    border-radius: 5px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.level-fill {
+  width: 0%;
+  height: 100%;
+  background-color: greenyellow;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.5s ease-in-out;
+  text-align: center;
+  line-height: 30px;
 }
 
 /* Greeting */
@@ -201,7 +223,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #3D3D3D;
+    background-color: #000000;
     color: #FFFFFF;
     padding: 20px;
     display: flex;
@@ -215,7 +237,7 @@ header h1 {
 }
 
 header button {
-    background-color: #EB5757;
+    background-color: #8a2626;
     color: #FFFFFF;
     border: none;
     padding: 10px 20px;
@@ -237,8 +259,8 @@ main {
 .avatar-container {
     width: 400px;
     height: 400px;
-    background-color: #FFFFFF;
-    border: 5px solid #3D3D3D;
+    background-color: hsl(0, 42%, 35%);
+    border: 5px solid #a03e3e;
     margin: 20px;
     display: flex;
     justify-content: center;
@@ -259,7 +281,7 @@ main {
     content: "";
     width: 100%;
     height: 100%;
-    background-image: url("background-morning.jpg");
+    background: url("Asset/Asset1.jpg");
     background-size: cover;
     opacity: 0.5;
     position: absolute;
@@ -277,7 +299,7 @@ main {
     width: 100%;
     background-color: #FFFFFF;
     border: 5px solid #3D3D3D;
-    margin: 20px;
+    margin: auto;
     padding: 10px;
     position: relative;
 }
@@ -286,7 +308,7 @@ main {
     content: "";
     width: 100%;
     height: 10px;
-    background-color: #3D3D3D;
+    background-color: rgb(105, 214, 251);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -296,7 +318,7 @@ main {
     width: 25%;
     height: 20px;
     margin: 5px;
-    background-color: #3D3D3D;
+    background-color: #c70000;
     position: relative;
 }
 
@@ -319,9 +341,12 @@ main {
     content: "";
     width: 50%;
     height: 20px;
-    background-image: url("icon-makan.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+    background: url('gambar/makan.png') no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    -moz-background-size: cover;
     position: absolute;
     top: 0;
     right: -30px;
@@ -331,7 +356,7 @@ main {
     width: 25%;
     height: 20px;
     margin: 5px;
-    background-color: aqua;
+    background-color: #374859;
 }
 
     /* Tampilan Umngotcha */
@@ -341,14 +366,14 @@ main {
     background-color: #4CAF50;
     padding: 20px;
     text-align: center;
-    color: white;
+    color: rgb(62, 15, 15);
     font-size: 30px;
 }
 
 /* Style untuk status bar */
 .status-bar {
-    background-color: #f2f2f2;
-    padding: 10px;
+    background-color: rgb(182, 227, 255);
+    padding: auto;
 }
 
 /* Style untuk level */
@@ -366,25 +391,26 @@ main {
 .avatar {
     width: 200px;
     height: 200px;
-    background-image: url('https://via.placeholder.com/200x200');
+    background-image: url('gambar/makan.png');
     background-size: cover;
     margin: 20px auto;
 }
 
 /* Style untuk tombol aktivitas */
 .activity-button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: aquamarine;
+    border-radius: 10px;
+    color: black;
     border: none;
-    padding: 10px;
+    padding: 10px 1em;
     text-align: center;
     font-size: 16px;
-    margin: 10px;
+    margin: 10px auto;
     cursor: pointer;
 }
 
 .activity-button:hover {
-    background-color: #3e8e41;
+    background-color: greenyellow;
 }
 
 /* Style untuk background */
