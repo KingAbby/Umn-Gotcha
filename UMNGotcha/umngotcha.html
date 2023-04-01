@@ -22,41 +22,38 @@
         <div class="status-meter">
             <div class="status-fill" id="status-kesehatan"></div>
         </div>
-        <div class="level-label">Level<span id="level">1</span></div>
-        <div class="level-meter">
-            <div class="level-fill" id="level-anak-dewasa"></div>
-        </div>
+        <div class="level-label">Level <span id="level">1</span></div>
     </div>
-    <div class="greeting" id="login">Good Morning </div>
+    <div class="greeting">Good Morning </div>
     <div class="clock">12:00 AM</div>
-    <img src="gambar/avatar1.jpg" alt="Avatar" class="avatar" id="avatar">
+    <img src="avatar1.png" alt="Avatar" class="avatar" id="avatar">
     <div class="activity-buttons">
         <button onclick="main()" class="activity-button" id="main">Main</button>
         <button onclick="makan()" class="activity-button" id="makan">Makan</button>
         <button onclick="tidur()" class="activity-button" id="tidur">Tidur</button>
         <button onclick="kesehatan()" class="activity-button" id="kesehatan">Obat</button>
 
-        
+
             <script>
             //progress makan
             let barMakan = document.getElementById("status-makan")
-            let progress = 25
-            let interval = setInterval(makan, 100000000) // 1000 Milisekon
+            let progress = 10
+            let interval = setInterval(makan, 10000) // 10000 Milisekon
             function makan(){
-                // Progress = 25 + 25 = 50 > 100, Set var progress = 100 agar tidak lebih dari 100
+                 //Progress = 25 + 25 = 50 > 100, Set var progress = 100 agar tidak lebih dari 100
                 if (progress > 100){ // Gak ngelebihin seratus
                     progress = 100; // set progress
                     barMakan.style.width = progress +'%' // update status
                     clearInterval(interval);
-                }else{
+                    }else{
                     barMakan.style.width = progress +'%'
-                    progress += 25 // Setiap klik tambah 25% progress
+                    progress += 10 // Setiap klik tambah 10% progress
                 }
             }
             //progress tidur
             let barTidur = document.getElementById("status-tidur")
-            let progress1 = 25
-            let interval1 = setInterval(tidur, 100000000) // 1000 Milisekon
+            let progress1 = 10
+            let interval1 = setInterval(tidur, 10000) // 10000 Milisekon
             function tidur(){
                 // Progress = 90 + 25 = 115 > 100, Set var progress = 100 agar tidak lebih dari 100
                 if (progress1 > 100){ // Gak ngelebihin seratus
@@ -65,14 +62,15 @@
                     clearInterval(interval);
                 }else{
                     barTidur.style.width = progress1 +'%'
-                    progress1 += 25 // Setiap klik tambah 25% progress
+                    progress1 += 10 // Setiap klik tambah 10% progress
                 }
             }
             //progress main
             let barMain = document.getElementById("status-main")
-            let progress2 = 25
-            let interval2 = setInterval(main, 100000000) // 1000 Milisekon
+            let progress2 = 10
+            let interval2 = setInterval(main, 10000) // 10000 Milisekon
             function main(){
+                window.location.href = "play-game.html"
                 // Progress = 90 + 25 = 115 > 100, Set var progress = 100 agar tidak lebih dari 100
                 if (progress2 > 100){ // Gak ngelebihin seratus
                     progress2 = 100; // set progress
@@ -80,13 +78,13 @@
                     clearInterval(interval);
                 }else{
                     barMain.style.width = progress2 +'%'
-                    progress2 += 25 // Setiap klik tambah 25% progress
+                    progress2 += 10 // Setiap klik tambah 10% progress
                 }
             }
             //progress kesehatan
             let barKesehatan = document.getElementById("status-kesehatan")
-            let progress3 = 25
-            let interval3 = setInterval(kesehatan, 100000000) // 1000 Milisekon
+            let progress3 = 10
+            let interval3 = setInterval(kesehatan, 10000) // 10000 Milisekon
             function kesehatan(){
                 // Progress = 90 + 25 = 115 > 100, Set var progress = 100 agar tidak lebih dari 100
                 if (progress3 > 100){ // Gak ngelebihin seratus
@@ -95,27 +93,10 @@
                     clearInterval(interval);
                 }else{
                     barKesehatan.style.width = progress3 +'%'
-                    progress3 += 25 // Setiap klik tambah 25% progress
+                    progress3 += 10 // Setiap klik tambah 10% progress
                 }
             }
             </script>
-
-            <script>
-                let barLevel = document.getElementById("level-anak-dewasa")
-                let progress4 = 25
-                let interval4 = setInterval(level, 100000000)
-                function level () {
-                    if (progress4 > 100){ // Gak ngelebihin seratus
-                    progress4 = 100; // set progress
-                    barMakan.style.width = progress4 +'%' // update status
-                    clearInterval(interval);
-                    }else{
-                    barMakan.style.width = progress4 +'%'
-                    progress4 += 25 // Setiap klik tambah 25% progress
-                }
-                }
-            </script>
-
 
         <script src="script.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.6.0/umd/react.production.min.js"></script>

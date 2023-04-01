@@ -15,7 +15,7 @@
 <body>
   <div class="hal1">
     <div class="logo">
-      <img src="gambar/image1.png" class="img-fluid rounded-3" />
+      <img src="Asset/Logo.png" class="img-fluid rounded-3" />
     </div>
     <div class="judul">
       <p>UMNGotcha</p>
@@ -27,17 +27,15 @@
 
     <!-- Full-width images with number and caption text -->
     <div class="mySlides">
-      <img src="gambar/avatar1.jpg" style="width:100%">
-    </div>
-    <div class="mySlides">
-      <img src="gambar/avatar2.jpg" style="width: 100%;">
-    </div>
-    <div class="mySlides">
-      <img src="gambar/avatar3.jpg" style="width:100%">
+      <img src="Asset/ayam.png" style="width:100%">
     </div>
 
     <div class="mySlides">
-      <img src="gambar/avatar4.jpg" style="width:100%">
+      <img src="Asset/koala.png" style="width: 100%;">
+    </div>
+
+    <div class="mySlides">
+      <img src="Asset/kudanil.png" style="width:100%">
     </div>
 
     <!-- Next and previous buttons -->
@@ -51,19 +49,21 @@
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
   </div>
   <div class="kata">
-    <p>Masukkan Nama Anda</p>
+    <p>Enter pet name here...</p>
   </div>
-  <div class="login" id="login">
-    <input type="text" />
+  <div class="login">
+    <input type="text" onchange="chosePetName()" id="input-pet"/>
   </div>
   <div class="tombol">
     <form action="umngotcha.html" method="get">
       <button type="submit">Play</button>
     </form>
   </div>
+  <audio autoplay loop>
+    <source src="Audio/[Genshin Anniversary Fansong] Right Here I Stand Official Release.mp3" type="audio/mpeg">
+  </audio>
 </body>
 
 </html>
