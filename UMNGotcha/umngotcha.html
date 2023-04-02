@@ -1,86 +1,89 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>UMNGotcha | MidExam</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <div class="status-bar">
-        <div class="status-label">Makan</div>
-        <div class="status-meter">
-            <div class="status-fill" id="status-makan"></div>
-        </div>
-        <div class="status-label">Tidur</div>
-        <div class="status-meter">
-            <div class="status-fill" id="status-tidur"></div>
-        </div>
-        <div class="status-label">Main</div>
-        <div class="status-meter">
-            <div class="status-fill" id="status-main"></div>
-        </div>
-        <div class="status-label">Kesehatan</div>
-        <div class="status-meter">
-            <div class="status-fill" id="status-kesehatan"></div>
-        </div>
-        <div class="level-label">Level <span id="level">1</span></div>
+  <head>
+    <title>UMNGotcha | MidExam</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="status-bar">
+      <div class="status-label">Makan</div>
+      <div class="status-meter">
+        <div class="status-fill" id="status-makan"></div>
+      </div>
+      <div class="status-label">Tidur</div>
+      <div class="status-meter">
+        <div class="status-fill" id="status-tidur"></div>
+      </div>
+      <div class="status-label">Main</div>
+      <div class="status-meter">
+        <div class="status-fill" id="status-main"></div>
+      </div>
+      <div class="status-label">Kesehatan</div>
+      <div class="status-meter">
+        <div class="status-fill" id="status-kesehatan"></div>
+      </div>
+      <div class="level-label">Level <span id="level">1</span></div>
     </div>
     <div id="greeting"></div>
     <div id="clock"></div>
-    <img alt="Avatar" class="avatar" id="avatar">
+    <img alt="Avatar" class="avatar" id="avatar" />
     <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>You are dead! Game Over</p>
-        </div>
-        </div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>You are dead! Game Over</p>
+      </div>
+    </div>
     <div class="activity-buttons">
-        <button onclick="pencetTabMain()" class="activity-button" id="main">Main</button>
-        <button onclick="pencetTabMakan()" class="activity-button" id="makan">Makan</button>
-        <button onclick="pencetTabTidur()" class="activity-button" id="tidur">Tidur</button>
-        <button onclick="pencetTabObat()" class="activity-button" id="kesehatan">Obat</button>
-        <div id="game-container">
-            <div id="food-a">
-                <H1>A</H1>
-            </div>
-            <div id="food-b">
-                <H1>B</H1>
-            </div>
-            <div id="food-c">
-                <H1>C</H1>
-            </div>
-            <div id="character-wrapper">
-                <img src="gambar/avatar1.jpg" id="petCharacter"/>
-            </div>
-            <div class="console-wrapper">
-                <div class="console-box">
-                    <div class="console" onclick="handleMovement('up')">
-                        <h1>UP</h1>
-                    </div>
-                </div>
-    
-                <div class="console-mid">
-                    <div class="console" onclick="handleMovement('left')">
-                        <h1>LEFT</h1>
-        
-                    </div>
-                    <div class="console" onclick="handleMovement('right')">
-                        <h1>RIGHT</h1>
-                    </div>
-                </div>
-                <div class="console-box">
-                    <div class="console" onclick="handleMovement('down')">
-                        <h1>DOWN</h1>
-                    </div>
-                </div>
-            </div>
-    
+      <button onclick="pencetTabMain()" class="activity-button" id="main">
+        Main
+      </button>
+      <button onclick="pencetTabMakan()" class="activity-button" id="makan">
+        Makan
+      </button>
+      <button onclick="pencetTabTidur()" class="activity-button" id="tidur">
+        Tidur
+      </button>
+      <button onclick="pencetTabObat()" class="activity-button" id="kesehatan">
+        Obat
+      </button>
+      <div id="game-container">
+        <div id="food-a">
+          <h1>A</h1>
         </div>
+        <div id="food-b">
+          <h1>B</h1>
+        </div>
+        <div id="food-c">
+          <h1>C</h1>
+        </div>
+        <div id="character-wrapper">
+          <img src="gambar/avatar1.jpg" id="petCharacter" />
+        </div>
+        <div class="console-wrapper">
+          <div class="console-box">
+            <div class="console" onclick="handleMovement('up')">
+              <h1>UP</h1>
+            </div>
+          </div>
 
-        <script src="script.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.6.0/umd/react.production.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.6.0/umd/react-dom.production.min.js"></script>
-
-        <div id="root" >
-
-    </body>
+          <div class="console-mid">
+            <div class="console" onclick="handleMovement('left')">
+              <h1>LEFT</h1>
+            </div>
+            <div class="console" onclick="handleMovement('right')">
+              <h1>RIGHT</h1>
+            </div>
+          </div>
+          <div class="console-box">
+            <div class="console" onclick="handleMovement('down')">
+              <h1>DOWN</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.6.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.6.0/umd/react-dom.production.min.js"></script>
 </html>
