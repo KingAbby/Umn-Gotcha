@@ -31,15 +31,17 @@
   
   /* Slideshow container */
   .slideshow-container {
-    max-width: 800px;
+    max-width: 600px;
     position: relative;
     margin: auto;
+    display: flex;
+    justify-content: center;;
   }
   
   /* Hide the images by default */
-  .mySlides {
-    display: flex;
-    justify-content: center;
+  .mySlides img{
+    width: 500px;
+    height: 200px;
   }
   
   /* Next & previous buttons */
@@ -175,7 +177,7 @@ body {
 
 /* Greeting */
 
-.greeting {
+#greeting {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
@@ -184,7 +186,7 @@ body {
 
 /* Clock */
 
-.clock {
+#clock {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -371,9 +373,8 @@ main {
 
 /* Style untuk avatar */
 .avatar {
-    width: 200px;
+    width: 400px;
     height: 200px;
-    background-image: url('https://via.placeholder.com/200x200');
     background-size: cover;
     margin: 20px auto;
 }
@@ -408,15 +409,15 @@ main {
     background-color: #1e90ff;
 }
 
-.game-container{
+#game-container{
   position:relative;
-  height: 400px;
+  height: 200px;
   border: 5px solid black;
+  display: none;
   }
   
   .console-wrapper {
   position: absolute;
-  bottom: 0;
   height: 200px;
   width: 200px;
   right: 0;
@@ -461,16 +462,54 @@ main {
   
   #food-b{
     position: absolute;
-    bottom: 200px;
-    right: 200px;
+    bottom: 40px;
+    right: 760px;
     width: 25px;
     height: 70px;
   }
   
   #food-c{
     position: absolute;
-    bottom: 250px;
-    right: 120px;
+    bottom: 100px;
+    right: 520px;
     width: 25px;
     height: 70px;
+  }
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
   }

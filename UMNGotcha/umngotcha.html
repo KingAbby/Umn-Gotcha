@@ -24,79 +24,57 @@
         </div>
         <div class="level-label">Level <span id="level">1</span></div>
     </div>
-    <div class="greeting">Good Morning </div>
-    <div class="clock">12:00 AM</div>
-    <img src="avatar1.png" alt="Avatar" class="avatar" id="avatar">
+    <div id="greeting"></div>
+    <div id="clock"></div>
+    <img alt="Avatar" class="avatar" id="avatar">
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>You are dead! Game Over</p>
+        </div>
+        </div>
     <div class="activity-buttons">
-        <button onclick="main()" class="activity-button" id="main">Main</button>
-        <button onclick="makan()" class="activity-button" id="makan">Makan</button>
-        <button onclick="tidur()" class="activity-button" id="tidur">Tidur</button>
-        <button onclick="kesehatan()" class="activity-button" id="kesehatan">Obat</button>
-
-
-            <script>
-            //progress makan
-            let barMakan = document.getElementById("status-makan")
-            let progress = 10
-            let interval = setInterval(makan, 10000) // 10000 Milisekon
-            function makan(){
-                 //Progress = 25 + 25 = 50 > 100, Set var progress = 100 agar tidak lebih dari 100
-                if (progress > 100){ // Gak ngelebihin seratus
-                    progress = 100; // set progress
-                    barMakan.style.width = progress +'%' // update status
-                    clearInterval(interval);
-                    }else{
-                    barMakan.style.width = progress +'%'
-                    progress += 10 // Setiap klik tambah 10% progress
-                }
-            }
-            //progress tidur
-            let barTidur = document.getElementById("status-tidur")
-            let progress1 = 10
-            let interval1 = setInterval(tidur, 10000) // 10000 Milisekon
-            function tidur(){
-                // Progress = 90 + 25 = 115 > 100, Set var progress = 100 agar tidak lebih dari 100
-                if (progress1 > 100){ // Gak ngelebihin seratus
-                    progress1 = 100; // set progress
-                    barTidur.style.width = progress1 +'%' // update status
-                    clearInterval(interval);
-                }else{
-                    barTidur.style.width = progress1 +'%'
-                    progress1 += 10 // Setiap klik tambah 10% progress
-                }
-            }
-            //progress main
-            let barMain = document.getElementById("status-main")
-            let progress2 = 10
-            let interval2 = setInterval(main, 10000) // 10000 Milisekon
-            function main(){
-                window.location.href = "play-game.html"
-                // Progress = 90 + 25 = 115 > 100, Set var progress = 100 agar tidak lebih dari 100
-                if (progress2 > 100){ // Gak ngelebihin seratus
-                    progress2 = 100; // set progress
-                    barMain.style.width = progress2 +'%' // update status
-                    clearInterval(interval);
-                }else{
-                    barMain.style.width = progress2 +'%'
-                    progress2 += 10 // Setiap klik tambah 10% progress
-                }
-            }
-            //progress kesehatan
-            let barKesehatan = document.getElementById("status-kesehatan")
-            let progress3 = 10
-            let interval3 = setInterval(kesehatan, 10000) // 10000 Milisekon
-            function kesehatan(){
-                // Progress = 90 + 25 = 115 > 100, Set var progress = 100 agar tidak lebih dari 100
-                if (progress3 > 100){ // Gak ngelebihin seratus
-                    progress3 = 100; // set progress
-                    barKesehatan.style.width = progress3 +'%' // update status
-                    clearInterval(interval);
-                }else{
-                    barKesehatan.style.width = progress3 +'%'
-                    progress3 += 10 // Setiap klik tambah 10% progress
-                }
-            }
-            </script>
+        <button onclick="pencetTabMain()" class="activity-button" id="main">Main</button>
+        <button onclick="pencetTabMakan()" class="activity-button" id="makan">Makan</button>
+        <button onclick="pencetTabTidur()" class="activity-button" id="tidur">Tidur</button>
+        <button onclick="pencetTabObat()" class="activity-button" id="kesehatan">Obat</button>
+        <div id="game-container">
+            <div id="food-a">
+                <H1>A</H1>
+            </div>
+            <div id="food-b">
+                <H1>B</H1>
+            </div>
+            <div id="food-c">
+                <H1>C</H1>
+            </div>
+            <div id="character-wrapper">
+                <img src="gambar/avatar1.jpg" id="petCharacter"/>
+            </div>
+            <div class="console-wrapper">
+                <div class="console-box">
+                    <div class="console" onclick="handleMovement('up')">
+                        <h1>UP</h1>
+                    </div>
+                </div>
+    
+                <div class="console-mid">
+                    <div class="console" onclick="handleMovement('left')">
+                        <h1>LEFT</h1>
+        
+                    </div>
+                    <div class="console" onclick="handleMovement('right')">
+                        <h1>RIGHT</h1>
+                    </div>
+                </div>
+                <div class="console-box">
+                    <div class="console" onclick="handleMovement('down')">
+                        <h1>DOWN</h1>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
 
         <script src="script.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.6.0/umd/react.production.min.js"></script>
