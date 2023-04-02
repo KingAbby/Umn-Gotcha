@@ -85,10 +85,15 @@ function initTime() {
 }
 
 if (window.location.pathname === "/UMNGotcha/umngotcha.html") {
+  let avatar = document.querySelector("#avatar");
+  let avatarID = document.getElementById("avatar");
+  let barMakan = document.getElementById("status-makan");
+  let barTidur = document.getElementById("status-tidur");
+  let barMain = document.getElementById("status-main");
+  let barKesehatan = document.getElementById("status-kesehatan");
   window.onload = function () {
     petImagePlay = localStorage.getItem("chosenPet");
     petNamePlay = localStorage.getItem("petName");
-    let avatar = document.querySelector("#avatar");
     avatar.src = petImagePlay;
   };
   let span = document.getElementsByClassName("close")[0];
@@ -100,28 +105,58 @@ if (window.location.pathname === "/UMNGotcha/umngotcha.html") {
   function pencetTabMakan() {
     activeTab = "makan";
     document.getElementById("game-container").style.display = "none";
+    avatar.src = petImagePlay.replace(".png", "-makan.png");
+    avatarID.style.width = "200px";
+    if (progress >= 100) {
+      return;
+    }
+    progress += 10; // Setiap klik tambah 10% progress
+    barMakan.style.width = progress + "%";
   }
   function pencetTabTidur() {
+    if (activeTab === "tidur") {
+      avatar.src = petImagePlay;
+      avatarID.style.width = "400px";
+      activeTab = "";
+      return;
+    }
     activeTab = "tidur";
     document.getElementById("game-container").style.display = "none";
+    avatar.src = petImagePlay.replace(".png", "-tidur.png");
+    avatarID.style.width = "200px";
   }
   function pencetTabMain() {
+    if (activeTab === "main") {
+      document.getElementById("game-container").style.display = "none";
+      activeTab = "";
+      return;
+    }
     activeTab = "main";
     document.getElementById("game-container").style.display = "block";
     let imagePet = document.querySelector("#petCharacter");
     imagePet.src = petImagePlay;
+    avatar.src = petImagePlay;
+    avatarID.style.width = "400px";
   }
+
   function pencetTabObat() {
     activeTab = "kesehatan";
     document.getElementById("game-container").style.display = "none";
+    avatar.src = petImagePlay.replace(".png", "-obat.png");
+    avatarID.style.width = "200px";
+    if (progress3 >= 100) {
+      return;
+    }
+    progress3 += 10; // Setiap klik tambah 10% progress
+    barKesehatan.style.width = progress3 + "%";
   }
+
   //progress makan
-  let barMakan = document.getElementById("status-makan");
   let interval = setInterval(makan, 10000); // 10000 Milisekon
   barMakan.style.width = progress + "%"; // update status
   function makan() {
     //Progress = 25 + 25 = 50 > 100, Set var progress = 100 agar tidak lebih dari 100
-    if (progress > 100) {
+    if (progress >= 100) {
       // Gak ngelebihin seratus
       if (activeTab !== "makan") {
         progress -= 10; // set progress
@@ -145,8 +180,8 @@ if (window.location.pathname === "/UMNGotcha/umngotcha.html") {
       }
     }
   }
+
   //progress tidur
-  let barTidur = document.getElementById("status-tidur");
   let interval1 = setInterval(tidur, 10000); // 10000 Milisekon
   barTidur.style.width = progress1 + "%"; // update status
   function tidur() {
@@ -157,17 +192,19 @@ if (window.location.pathname === "/UMNGotcha/umngotcha.html") {
         progress1 -= 10; // set progress
         barTidur.style.width = progress1 + "%"; // update status
         return;
+      } else {
+        progress1 = 100; // set progress
+        barTidur.style.width = progress1 + "%"; // update status
       }
-      progress1 = 100; // set progress
-      barTidur.style.width = progress1 + "%"; // update status
     } else {
-      if (activeTab !== "tidur") {
+      if (activeTab !== "tidur" && progress1 > 0) {
         progress1 -= 10; // set progress
         barTidur.style.width = progress1 + "%"; // update status
         return;
       } else {
         if (progress1 <= 0) {
           progress1 = 0;
+          return;
         }
         progress1 += 10; // Setiap klik tambah 10% progress
         barTidur.style.width = progress1 + "%";
@@ -175,12 +212,12 @@ if (window.location.pathname === "/UMNGotcha/umngotcha.html") {
     }
   }
   //progress main
-  let barMain = document.getElementById("status-main");
+
   let interval2 = setInterval(main, 10000); // 10000 Milisekon
   barMain.style.width = progress2 + "%"; // update status
   function main() {
     // Progress = 90 + 25 = 115 > 100, Set var progress = 100 agar tidak lebih dari 100
-    if (progress2 > 100) {
+    if (progress2 >= 100) {
       // Gak ngelebihin seratus
       if (activeTab !== "main") {
         progress2 -= 10; // set progress
@@ -191,13 +228,14 @@ if (window.location.pathname === "/UMNGotcha/umngotcha.html") {
         barMain.style.width = progress2 + "%"; // update status
       }
     } else {
-      if (activeTab !== "main") {
+      if (activeTab !== "main" && progress2 > 0) {
         progress2 -= 10; // set progress
         barMain.style.width = progress2 + "%"; // update status
         return;
       } else {
         if (progress2 <= 0) {
           progress2 = 0;
+          return;
         }
         progress2 += 10; // Setiap klik tambah 10% progress
         barMain.style.width = progress2 + "%";
@@ -205,13 +243,12 @@ if (window.location.pathname === "/UMNGotcha/umngotcha.html") {
     }
   }
   //progress kesehatan
-  let barKesehatan = document.getElementById("status-kesehatan");
-  let inte;
-  rval3 = setInterval(kesehatan, 10000); // 10000 Milisekon
+
+  let interval3 = setInterval(kesehatan, 10000); // 10000 Milisekon
   barKesehatan.style.width = progress3 + "%";
   function kesehatan() {
     // Progress = 90 + 25 = 115 > 100, Set var progress = 100 agar tidak lebih dari 100
-    if (progress3 > 100) {
+    if (progress3 >= 100) {
       // Gak ngelebihin seratus
       if (activeTab !== "kesehatan") {
         progress3 -= 10; // set progress
@@ -243,24 +280,29 @@ if (window.location.pathname === "/UMNGotcha/umngotcha.html") {
   const positionC = [250, 120];
 
   function gotcha() {
-    if (bottom === 80 && right === 180) {
-      progress2 = 100; // set progress
-      barMain.style.width = progress2 + "%"; // update status
+    if (bottom === 40 && right === 140) {
       let foodA = document.getElementById("food-a");
       foodA.style.display = "none";
       main();
-    } else if (bottom === 40 && right === 760) {
+    } else if (bottom === 20 && right === 680) {
       main();
       let foodB = document.getElementById("food-b");
       foodB.style.display = "none";
-    } else if (bottom === 100 && right === 520) {
+    } else if (bottom === 80 && right === 480) {
       main();
       let foodC = document.getElementById("food-c");
       foodC.style.display = "none";
+    } else if (bottom === 80 && right === 540) {
+      main();
+      let foodD = document.getElementById("food-d");
+      foodD.style.display = "none";
     }
   }
 
   document.addEventListener("keyup", function (e) {
+    const element = document.getElementById("game-container");
+    const positionInfo = element.getBoundingClientRect();
+    const width = positionInfo.width;
     gotcha();
     switch (e.keyCode) {
       //up
@@ -289,7 +331,7 @@ if (window.location.pathname === "/UMNGotcha/umngotcha.html") {
         break;
       //left
       case 37:
-        if (right >= 840) {
+        if (right >= width - 100) {
           return;
         }
         character.style.right = String(right + 20) + "px";
@@ -369,25 +411,28 @@ function updateTime() {
 
     /* Update jam pada tampilan */
     // let timeElement = document.getElementById("time");
-    document.getElementById("clock").textContent = ` ${h} : ${m} AM`;
-    if (minutes === 10) {
+    document.getElementById("clock").textContent = ` ${h} : ${m}`;
+    if (hours === 10) {
       document.getElementById("level").innerHTML = 2;
     }
-    if (minutes === 20) {
+    if (hours === 20) {
       document.getElementById("level").innerHTML = 3;
     }
-
-    if (hour >= 5 && hour < 12) {
+    let bodyHTML = document.getElementById("container");
+    if (hours >= 5 && hours < 12) {
       // timeElement.textContent = "Good Morning!";
+      bodyHTML.style.backgroundImage = "url('Asset/Morning.jpg')";
       greetingElement.textContent = `Good Morning, ${petNamePlay} !`;
       // setBackground("bg-morning");
-    } else if (hour >= 12 && hour < 18) {
+    } else if (hours >= 12 && hours < 18) {
       // timeElement.textContent = "Good Afternoon!";
       greetingElement.textContent = `Good Afternoon, ${petNamePlay} !`;
+      bodyHTML.style.backgroundImage = "url('Asset/Evening.jpg')";
       // setBackground("bg-afternoon");
     } else {
       // timeElement.textContent = "Good Night!";
       greetingElement.textContent = `Good Night, ${petNamePlay} !`;
+      bodyHTML.style.backgroundImage = "url('Asset/Night.jpg')";
       // setBackground("bg-night");
     }
   }

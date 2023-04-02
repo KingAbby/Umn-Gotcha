@@ -4,7 +4,7 @@
     <title>UMNGotcha | MidExam</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
-  <body>
+  <body id="container">
     <div class="status-bar">
       <div class="status-label">Makan</div>
       <div class="status-meter">
@@ -48,13 +48,16 @@
       </button>
       <div id="game-container">
         <div id="food-a">
-          <h1>A</h1>
+          <img src="Asset/Donat.png" />
         </div>
         <div id="food-b">
-          <h1>B</h1>
+          <img src="Asset/Susu.png" />
         </div>
         <div id="food-c">
-          <h1>C</h1>
+          <img src="Asset/Sosis.png" />
+        </div>
+        <div id="food-d">
+          <img src="Asset/Sandwich.png" />
         </div>
         <div id="character-wrapper">
           <img src="gambar/avatar1.jpg" id="petCharacter" />
@@ -62,26 +65,29 @@
         <div class="console-wrapper">
           <div class="console-box">
             <div class="console" onclick="handleMovement('up')">
-              <h1>UP</h1>
+              <img src="Asset/arrow-up.png" />
             </div>
           </div>
 
           <div class="console-mid">
             <div class="console" onclick="handleMovement('left')">
-              <h1>LEFT</h1>
+              <img src="Asset/arrow-left.png" />
             </div>
             <div class="console" onclick="handleMovement('right')">
-              <h1>RIGHT</h1>
+              <img src="Asset/arrow-right.png" />
             </div>
           </div>
           <div class="console-box">
             <div class="console" onclick="handleMovement('down')">
-              <h1>DOWN</h1>
+              <img src="Asset/arrow-down.png" />
             </div>
           </div>
         </div>
       </div>
     </div>
+    <audio controls autoplay loop>
+      <source src="Audio/Backsong UmnGotcha.mp3" type="audio/mpeg" />
+    </audio>
   </body>
   <script src="script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.6.0/umd/react.production.min.js"></script>
