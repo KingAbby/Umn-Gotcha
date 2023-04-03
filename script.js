@@ -219,15 +219,14 @@ if (window.location.pathname.includes("umngotcha.html")) {
           barTidur.style.width = progress1 + "%"; // update status
         }
       } else {
-        if (activeTab !== "tidur" && progress1 > 0) {
+        if (progress1 <= 0) {
+          progress1 = 0;
+        }
+        if (activeTab !== "tidur") {
           progress1 -= 10; // set progress
           barTidur.style.width = progress1 + "%"; // update status
           return;
         } else {
-          if (progress1 <= 0) {
-            progress1 = 0;
-            return;
-          }
           progress1 += 10; // Setiap klik tambah 10% progress
           barTidur.style.width = progress1 + "%";
         }
@@ -250,17 +249,13 @@ if (window.location.pathname.includes("umngotcha.html")) {
           barMain.style.width = progress2 + "%"; // update status
         }
       } else {
+        if (progress2 <= 0) {
+          progress2 = 0;
+        }
         if (activeTab !== "main" && progress2 > 0) {
           progress2 -= 10; // set progress
           barMain.style.width = progress2 + "%"; // update status
           return;
-        } else {
-          if (progress2 <= 0) {
-            progress2 = 0;
-            return;
-          }
-          progress2 += 10; // Setiap klik tambah 10% progress
-          barMain.style.width = progress2 + "%";
         }
       }
     }
@@ -305,19 +300,23 @@ if (window.location.pathname.includes("umngotcha.html")) {
       if (bottom === 40 && right === 140) {
         let foodA = document.getElementById("food-a");
         foodA.style.display = "none";
-        main();
+        progress2 += 10;
+        barMain.style.width = progress2 + "%";
       } else if (bottom === 20 && right === 680) {
-        main();
         let foodB = document.getElementById("food-b");
         foodB.style.display = "none";
+        progress2 += 10;
+        barMain.style.width = progress2 + "%";
       } else if (bottom === 80 && right === 480) {
-        main();
         let foodC = document.getElementById("food-c");
         foodC.style.display = "none";
+        progress2 += 10;
+        barMain.style.width = progress2 + "%";
       } else if (bottom === 80 && right === 540) {
-        main();
         let foodD = document.getElementById("food-d");
         foodD.style.display = "none";
+        progress2 += 10;
+        barMain.style.width = progress2 + "%";
       }
     }
 
@@ -462,151 +461,3 @@ if (window.location.pathname.includes("umngotcha.html")) {
     setInterval(updateTime, 1000);
   };
 }
-
-/* Update waktu */
-
-/* Update tampilan */
-function updateDisplay() {
-  /* Update avatar */
-  let petImageElement = document.getElementById("pet-image");
-  petImageElement.style.backgroundImage = `url(${petImage})`;
-
-  /* Update status bar */
-  let healthBar = document.getElementById("health-bar");
-  healthBar.style.width = `${petHealth}%`;
-
-  let hungerBar = document.getElementById("hunger-bar");
-  hungerBar.style.width = `${petHunger}%`;
-
-  let sleepinessBar = document.getElementById("sleepiness-bar");
-  sleepinessBar.style.width = `${petSleepiness}%`;
-
-  let happinessBar = document.getElementById("happiness-bar");
-  happinessBar.style.width = `${petHappiness}%`;
-
-  let levelElement = document.getElementById("level");
-  levelElement.textContent = `Level ${petLevel} (${petExp} XP)`;
-}
-
-/* Inisialisasi tampilan */
-function initDisplay() {
-  /* Set nama hewan piaraan */
-  let petNameElement = document.getElementById("pet-name");
-  petNameElement.textContent = petName;
-
-  /* Set gambar avatar */
-  petImage = avatarImages[Math.floor(Math.random() * avatarImages.length)];
-  let petImageElement = document.getElementById("pet-image");
-  petImageElement.style.backgroundImage = `url(${petImage})`;
-
-  /* Update tampilan */
-  updateDisplay();
-
-  /* Inisialisasi waktu */
-  initTime();
-}
-
-/* Update kondisi hewan piaraan */
-function updatePetCondition() {
-  /* Kurangi kondisi setiap kali update */
-  petHunger -= 10;
-  petSleepiness -= 5;
-  petHappiness -= 10;
-
-  /* Update kondisi kesehatan */
-  let health = (petHunger + petSleepiness + petHappiness) / 3;
-  petHealth = health;
-}
-
-/* cek kondisi kesehatan */
-function cekKesehatan() {
-  if (kesehatan <= 0) {
-    clearInterval(interval);
-    clearInterval(waktu);
-    alert("Game over, " + namaHewan + "meninggal karena sakit");
-    btnAktivitas.forEach((btn) => (btn.disabled = true));
-  } else if (kesehatan < 30) {
-    kondisiHewan.innerHTML = "Kesehatan: ";
-    progressKesehatan.classList.add("bg-danger");
-  } else if (kesehatan < 60) {
-    kondisiHewan.innerHTML = "Kesehatan: ";
-    progressKesehatan.classList.add("bg-warning");
-  } else {
-    kondisiHewan.innerHTML = "Kesehatan: ";
-    progressKesehatan.classList.add("bg-success");
-  }
-}
-
-/* update kondisi pemain */
-function updateKondisi() {
-  makananBar.style.width = makanan + "%";
-  tidurBar.style.width = tidur + "%";
-  mainBar.style.width = main + "%";
-  kesehatanBar.style.width = kesehatan + "%";
-
-  cekKondisiLevel();
-  cekKesehatan();
-}
-
-/* mengurangi kondisi pemain secara berkala */
-function kurangKondisi() {
-  makanan -= 5;
-  tidur -= 10;
-  main -= 7;
-  kesehatan -= 2;
-
-  updateKondisi();
-}
-
-/* aktivitas makan */
-// btnMakan.addEventListener("click", () => {
-//   makan += 30;
-//   kesehatan += 10;
-//   kondisiHewan.innerHTML = "Makan: ";
-//   avatarHewan.src = "img/hewan-makan.gif";
-//   setTimeout(() => {
-//     avatarHewan.src = avatarMood();
-//   }, 15000);
-// });
-
-/* aktivitas tidur */
-// btnTidur.addEventListener("click", () => {
-//   tidur += 30;
-//   makan -= 10;
-//   kondisiHewan.innerHTML = "Tidur: ";
-//   avatarHewan.src = "img/hewan-tidur.gif";
-//   setTimeout(() => {
-//     avatarHewan.src = avatarMood();
-//   }, 30000);
-// });
-
-/* aktivitas main */
-// btnMain.addEventListener("click", () => {
-//   main += 20;
-//   makan -= 5;
-//   kondisiHewan.innerHTML = "Main: ";
-//   avatarHewan.src = "img/hewan-main.gif";
-//   setTimeout(() => {
-//     avatarHewan.src = avatarMood();
-//   }, 20000);
-// });
-
-/* aktivitas minum obat */
-// btnObat.addEventListener("click", () => {
-//   kesehatan += 20;
-//   kondisiHewan.innerHTML = "Obat: ";
-//   avatarHewan.src = "img/hewan-sehat.gif";
-//   setTimeout(() => {
-//     avatarHewan.src = avatarMood();
-//   }, 5000);
-// });
-
-/* set interval mengurangi kondisi pemain secara berkala */
-// const intervalKondisi = setInterval(() => {
-//   kurangKondisi();
-// }, 10000);
-
-// /* set interval update waktu */
-// const waktu = setInterval(() => {
-//   updateWaktu();
-// }, 1000);
