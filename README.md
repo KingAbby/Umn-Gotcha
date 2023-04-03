@@ -12,7 +12,7 @@
 
 Link Game: https://elegant-bavarois-36e72a.netlify.app/register.html
 
-Youtube Demo Presentasi: 
+Youtube Demo Presentasi: https://youtu.be/xwxOZDuOI8w
 
 "UMNGotcha" Merupakan game berbasis HTML yang merupakan sebuah game virtual pet dimana kita bisa berinteraksi dengan virtual pet kita
 seperti makan, tidur, main dan obat. 
