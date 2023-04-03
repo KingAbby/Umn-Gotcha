@@ -131,6 +131,14 @@ if (window.location.pathname === "/UMNGotcha/umngotcha.html") {
       activeTab = "";
       return;
     }
+    let foodA = document.getElementById("food-a");
+    let foodB = document.getElementById("food-b");
+    let foodC = document.getElementById("food-c");
+    let foodD = document.getElementById("food-d");
+    foodA.style.display = "block";
+    foodB.style.display = "block";
+    foodC.style.display = "block";
+    foodD.style.display = "block";
     activeTab = "main";
     document.getElementById("game-container").style.display = "block";
     let imagePet = document.querySelector("#petCharacter");
