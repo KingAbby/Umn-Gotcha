@@ -1,5 +1,4 @@
-# Umn-Gotcha 
-UMNGotcha - Virtual Pet Game 
+# Umn-Gotcha - Virtual Pet Game
 
 -Abi Andrea Nurpasha (00000079207)
 
