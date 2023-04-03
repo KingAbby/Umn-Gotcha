@@ -1,9 +1,12 @@
 # Umn-Gotcha 
 UMNGotcha - Virtual Pet Game 
 
--Abi Andrea Nurpasha (00000079207) 
--Gilbert Parluhutan Pakpahan (00000079904) 
--Fikri Naufal Andrasito (00000079229) 
+-Abi Andrea Nurpasha (00000079207)
+
+-Gilbert Parluhutan Pakpahan (00000079904)
+
+-Fikri Naufal Andrasito (00000079229)
+
 -Muhammad Ilham Sabillah (00000079200) 
 
 Peraturan Game: 
