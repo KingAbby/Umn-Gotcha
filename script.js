@@ -193,6 +193,9 @@ if (window.location.pathname.includes("umngotcha.html")) {
           progress = 0;
         }
         if (activeTab !== "makan") {
+          if (progress <= 0) {
+            return;
+          }
           progress -= 10; // set progress
           barMakan.style.width = progress + "%"; // update status
           return;
