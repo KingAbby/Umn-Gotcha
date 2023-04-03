@@ -223,6 +223,9 @@ if (window.location.pathname.includes("umngotcha.html")) {
           progress1 = 0;
         }
         if (activeTab !== "tidur") {
+          if (progress1 <= 0) {
+            return;
+          }
           progress1 -= 10; // set progress
           barTidur.style.width = progress1 + "%"; // update status
           return;
@@ -404,6 +407,10 @@ if (window.location.pathname.includes("umngotcha.html")) {
 
     function updateTime() {
       if (window.location.pathname.includes("umngotcha.html")) {
+        console.log(progress);
+        console.log(progress1);
+        console.log(progress2);
+        console.log(progress3);
         if (
           progress === 0 &&
           progress1 === 0 &&
