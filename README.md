@@ -8,6 +8,11 @@
 
 -Muhammad Ilham Sabillah (00000079200) 
 
+=========================================================================================================================================================================
+
+Link Game: https://elegant-bavarois-36e72a.netlify.app/register.html
+Youtube Demo Presentasi: 
+
 Peraturan Game: 
 
 UMN GOTCHA 
