@@ -413,6 +413,7 @@ main {
   background-color: #1e90ff;
 }
 
+/*fitur main game*/
 #game-container {
   position: relative;
   height: 200px;
@@ -506,6 +507,7 @@ main {
 #food-d img {
   width: 50px;
 }
+/* akhir fitur main game */
 
 .modal {
   display: none; /* Hidden by default */
